@@ -50,36 +50,6 @@ public class MainActivity extends AppCompatActivity {
         if (resultCode != Activity.RESULT_OK) return;
 
         if (requestCode == 1 && data != null) {
-//            Uri contactUri = data.getData();
-//
-//            // Specify which fields you want your
-//            // query to return values for
-//            String[] queryFields = new String[]{ContactsContract.Contacts.DISPLAY_NAME};
-//
-//            // Perform your query - the contactUri
-//            // is like a "where" clause here
-//            Cursor cursor = this.getContentResolver()
-//                    .query(contactUri, queryFields, null, null, null);
-//            try {
-//                // Double-check that you
-//                // actually got results
-//                if (cursor.getCount() == 0) return;
-//
-//                // Pull out the first column
-//                // of the first row of data
-//                // that is your contact's name
-//                cursor.moveToFirst();
-//
-//                String name = cursor.getString(0);
-//                String number = cursor.getString(cursor.getColumnIndexOrThrow(ContactsContract.CommonDataKinds.Phone.NUMBER));
-//                Log.e("TAG", number);
-//
-//                contactNameTV.setText(name);
-//
-//            } finally {
-//                cursor.close();
-//            }
-
             Uri contactData = data.getData();
             Cursor cursor = managedQuery(contactData, null, null, null, null);
             cursor.moveToFirst();
